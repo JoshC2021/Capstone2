@@ -86,8 +86,15 @@ namespace taskList
             }
             else if(n == 5)
             {
-                Console.Write($"Enter the number for the task which you want to edit(1-{tasks.Count}): ");
-                EditTask(GetNumberInRange(1, tasks.Count));
+                if (tasks.Count > 0)
+                {
+                    Console.Write($"Enter the number for the task which you want to edit(1-{tasks.Count}): ");
+                    EditTask(GetNumberInRange(1, tasks.Count));
+                }
+                else
+                {
+                    Console.WriteLine("No tasks to edit");
+                }
             }
             else if (n == 6)
             {
